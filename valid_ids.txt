@@ -352,7 +352,9 @@ do
             data = readfile(library.folders.assets.."/"..imageName..".png")
         else
             if imageLink then
-                print("hey")
+		wait(5)
+                data = game:HttpGet(imageLink)
+                writefile(library.folders.assets.."/"..imageName..".png", data)
             else
                 return
             end
